@@ -1,0 +1,44 @@
+import { GoogleGenerativeAI } from "@google/generative-ai";
+
+const googleai = new GoogleGenerativeAI(import.meta.env.VITE_GOOGLE_AI_API_KEY);
+
+export class Assistant {
+  #chat;
+
+  constructor(model = "gemini-2.0-flash") {
+    const gemini = googleai.getGenerativeModel({ model });
+    this.#chat = gemini.startChat({ history: [] });
+  }
+
+  async chat(content) {
+    try {
+      const result = await this.#chat.sendMessage(content);
+      return result.response.text();
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async *chatStream(content, messages, signal) {
+    try {
+      const result = await this.#chat.sendMessageStream(content);
+
+      for await (const chunk of result.stream) {
+        // Check if the request was aborted
+        if (signal?.aborted) {
+          console.log("Stream aborted - stopping generation");
+          throw new DOMException("Aborted", "AbortError");
+        }
+        
+        yield chunk.text();
+      }
+    } catch (error) {
+      // If it's an abort error, re-throw it
+      if (error.name === "AbortError") {
+        throw error;
+      }
+      // Otherwise, throw the original error
+      throw error;
+    }
+  }
+}

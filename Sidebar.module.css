@@ -1,0 +1,141 @@
+.sidebar {
+  width: 240px;
+  background: var(--bg-sidebar);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  transition: all 0.3s ease;
+  border-right: 1px solid var(--border-color);
+  color: var(--text-secondary);
+}
+
+.closed {
+  width: 70px;
+  padding: 20px 10px;
+}
+
+.menuToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  transition: background 0.3s ease;
+}
+
+.menuToggle:hover {
+  background: var(--button-hover-bg);
+}
+
+.hamburger > div {
+  width: 20px;
+  height: 2px;
+  background: var(--text-secondary);
+  margin: 4px 0;
+}
+
+.navItems {
+  flex-grow: 1;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: rgba(124, 58, 237, 0.05);
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 12px;
+  transition: background 0.3s ease;
+}
+
+.navItem:hover {
+  background: rgba(124, 58, 237, 0.15);
+}
+
+.addIcon {
+  font-size: 20px;
+  color: #7c3aed;
+}
+
+.userProfile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0; /* Prevent profile section from shrinking */
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0; /* Prevent shrinking */
+  padding: 0; /* Remove padding that might affect size */
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+/* Override any conflicting styles for logo specifically */
+.avatar img.logo {
+  width: 48px !important;
+  height: 48px !important;
+  min-width: 48px !important;
+  min-height: 48px !important;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.username {
+  font-weight: 600;
+}
+
+.logo {
+  width: 48px;        /* desired fixed size */
+  height: 48px;       /* desired fixed size */
+  min-width: 48px;
+  min-height: 48px;
+  object-fit: contain; /* preserve aspect ratio */
+  display: block;
+  border-radius: 6px;  /* optional */
+}
+
+/* Add these rules for favicon */
+.favicon {
+  width: 32px;        /* standard favicon size */
+  height: 32px;
+  min-width: 32px;    /* prevent shrinking */
+  min-height: 32px;
+  object-fit: contain; /* maintain aspect ratio */
+}
+
+/* For larger favicon sizes (if needed) */
+.faviconLarge {
+  width: 192px;
+  height: 192px;
+  min-width: 192px;
+  min-height: 192px;
+  object-fit: contain;
+}
+
+/* For smaller favicon sizes */
+.faviconSmall {
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+  object-fit: contain;
+}
