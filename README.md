@@ -28,7 +28,7 @@ Built with **React.js**, this project provides an interactive, theme-aware chat 
 
 ## 🚀 Getting Started
 
-### 1️⃣ Clone the Repository
+1️⃣ Clone the Repository
 ```bash
 git clone https://github.com/AshitaSharma01/<your-repo-name>.git
 cd <your-repo-name>
@@ -40,13 +40,13 @@ npm install
 npm start
 our app will be available at http://localhost:3000
 
-Tech Stack
+## Tech Stack
 Frontend: React.js
 Styling: CSS Modules
 Linting: ESLint
 Future Integration: OpenAI / Dialogflow API for AI responses
 
-Components Overview
+## Components Overview
 App.jsx	Root component managing the layout and state
 Chat.jsx	Handles message input and display
 Controls.jsx	Contains chat or theme control elements
